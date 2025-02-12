@@ -1,0 +1,132 @@
+/* Structure principale pour le body */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Assure que le body occupe au moins la hauteur de la fenêtre */
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* Le contenu principal occupera l'espace disponible */
+
+main {
+    flex: 1;
+    /* Permet d'occuper l'espace disponible entre le header et le footer */
+}
+
+
+/* Header */
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+}
+
+
+/* Titre principal */
+
+h1 {
+    font-size: 3rem;
+}
+
+
+/* Section de la boîte cadeau */
+
+.gift-box-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+
+/* Boîte cadeau animée */
+
+.gift-box {
+    width: 150px;
+    height: 150px;
+    background-color: #FF6347;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: bounce 1s infinite alternate;
+}
+
+.gift-box::before,
+.gift-box::after {
+    content: "";
+    position: absolute;
+    background-color: #FF4500;
+    height: 20px;
+    width: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gift-box::before {
+    top: 40px;
+}
+
+.gift-box::after {
+    top: 100px;
+}
+
+
+/* Masquer les sections au départ */
+
+.hidden {
+    display: none;
+}
+
+
+/* Section du contenu (poème, lettre, etc.) */
+
+#content {
+    margin: 50px 20px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+/* Style des différentes parties du contenu */
+
+.content-wrapper {
+    margin-bottom: 20px;
+}
+
+
+/* Footer collé en bas */
+
+footer {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    /* Assure que le footer reste collé en bas si le contenu est court */
+}
+
+
+/* Animation de rebond pour la boîte */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
